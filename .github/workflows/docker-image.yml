@@ -17,8 +17,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Eslint Annotate
-        uses: a-b-r-o-w-n/eslint-action@v2.2.0
+      - name: ESLint Action eslintrc
+        uses: mrdivyansh/eslint-action@v1.0.7
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
 
