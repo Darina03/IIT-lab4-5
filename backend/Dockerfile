@@ -3,7 +3,6 @@ FROM node:latest
 WORKDIR /app/backend
 
 COPY package*.json ./
-
 COPY . .
 
 EXPOSE 3000
