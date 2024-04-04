@@ -17,8 +17,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: standardjs-ga
-        uses: devjoca/standardjs-action@0.4.0
+      - name: SonarQube Quality Gate Check
+        uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
     
 
       - name: Log in to Docker Hub
