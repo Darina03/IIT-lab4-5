@@ -43,10 +43,4 @@ jobs:
           push: true
           tags: darynaspyskan/repo1:frontend_lr4_5
 
-      - name: Build and push backend
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: backend/Dockerfile
-          push: true
-          tags: darynaspyskan/repo1:backend_lr4_5
+  
