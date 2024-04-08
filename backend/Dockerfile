@@ -2,13 +2,13 @@ FROM node:latest
 
 WORKDIR /app/backend
 
-COPY package*.json ./
+COPY package.json ./
+COPY package-lock.json ./
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-RUN nvm install node
+RUN npm install
 
 COPY . .
 
 EXPOSE 3000
 
-CMD ["nvm", "start"]
+CMD ["npm", "start"]
