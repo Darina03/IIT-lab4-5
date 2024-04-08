@@ -4,10 +4,11 @@ WORKDIR /app/backend
 
 COPY package*.json ./
 
-RUN sudo npm install
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+RUN nvm install node
 
 COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["nvm", "start"]
