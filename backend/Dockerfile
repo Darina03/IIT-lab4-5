@@ -4,7 +4,7 @@ WORKDIR /app/backend
 
 COPY package*.json ./
 
-RUN npm install
+RUN sudo npm install
 
 COPY . .
 
