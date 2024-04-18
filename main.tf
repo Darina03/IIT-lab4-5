@@ -1,20 +1,20 @@
 terraform {
 
-  backend "remote" {
-    # The name of your Terraform Cloud organization.
-    organization = "francesco"
+  # backend "remote" {
+  #   # The name of your Terraform Cloud organization.
+  #   organization = "francesco"
 
-    # The name of the Terraform Cloud workspace to store Terraform state files in.
-    workspaces {
-      name = "fiauuu"
-    }
-  }
+  #   # The name of the Terraform Cloud workspace to store Terraform state files in.
+  #   workspaces {
+  #     name = "fiauuu"
+  #   }
+  # }
 
 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.2.0"
+      version = "~> 4.16"
     }
   }
 
@@ -22,13 +22,13 @@ terraform {
 }
 
 provider "aws" {
-  region = "eu-north-1"
+  region     = "eu-north-1"
   access_key = "my-access-key"
   secret_key = "my-secret-key"
 }
 
 resource "aws_instance" "app_server" {
-  ami                    = "ami-01f320e5e4c1777a8"
+  ami                    = "ami-0914547665e6a707c"
   instance_type          = "t3.micro"
   user_data              = <<EOT
 #!/bin/bash
