@@ -1,4 +1,4 @@
-oterraform {
+terraform {
 
   backend "remote" {
     # The name of your Terraform Cloud organization
