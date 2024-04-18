@@ -78,9 +78,9 @@ jobs:
       run: terraform import aws_security_group.my_security_group sg-0dde1a38d4471ac14
 
     - name: Terraform Plan
-      run: terraform plan -input=false -out=tfplan.out
+      run: terraform plan -input=false 
 
     # Apply new changes after destroying existing infrastructure
     - name: Terraform Apply
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      run: terraform apply -auto-approve -input=false tfplan.out
+      run: terraform apply -auto-approve -input=false 
