@@ -35,6 +35,10 @@ jobs:
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
     # Destroy existing infrastructure before applying new changes
+    - name: Terraform Init
+      run: terraform init
+
+    # Destroy existing infrastructure
     - name: Terraform Destroy
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: terraform destroy -auto-approve
