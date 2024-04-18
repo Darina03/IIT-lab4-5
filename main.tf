@@ -34,7 +34,7 @@ sudo apt-get update
 sudo apt-get install -y docker.io 
 sudo systemctl start docker
 sudo systemctl enable docker
-sudo docker run —name==lr_6 -dp 80:80 darynaspyskan/repo1:frontend_lr4_5
+sudo docker run --name=lr_6 -dp 80:80 darynaspyskan/repo1:frontend_lr4_5
 EOT
   vpc_security_group_ids = [aws_security_group.my_security_group.id]
   depends_on             = [aws_security_group.my_security_group]
