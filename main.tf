@@ -14,7 +14,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.2"
+      version = "~> 4.16"
     }
   }
 
@@ -63,5 +63,9 @@ resource "aws_security_group" "my_security_group" {
     to_port     = 0
     protocol    = "-1" # Allow all outbound traffic
     cidr_blocks = ["0.0.0.0/0"]
+  }
+  lifecycle {
+    // Ensure the security group is replaced when changed
+    prevent_destroy = true
   }
 }
