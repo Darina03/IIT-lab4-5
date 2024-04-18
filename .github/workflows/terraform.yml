@@ -9,42 +9,8 @@ permissions:
   contents: read
 
 jobs:
-  # terraform_destroy:
-  #   name: 'Terraform Destroy'
-  #   runs-on: ubuntu-latest
-  #   environment: production
-
-  #   defaults:
-  #     run:
-  #       shell: bash
-
-  #   steps:
-  #   - name: Checkout
-  #     uses: actions/checkout@v3
-
-  #   - name: Set up AWS credentials
-  #     uses: aws-actions/configure-aws-credentials@v2
-  #     with:
-  #       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  #       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #       aws-region: eu-north-1
-
-  #   - name: Setup Terraform
-  #     uses: hashicorp/setup-terraform@v1
-  #     with:
-  #       cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-
-  #   # Destroy existing infrastructure before applying new changes
-  #   - name: Terraform Init
-  #     run: terraform init
-
-  #   # Destroy existing infrastructure
-  #   - name: Terraform Destroy
-  #     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-  #     run: terraform destroy -auto-approve
-
-  terraform_apply:
-    name: 'Terraform Apply'
+  terraform:
+    name: 'Terraform'
     runs-on: ubuntu-latest
     environment: production
 
