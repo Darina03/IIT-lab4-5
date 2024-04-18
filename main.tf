@@ -34,7 +34,9 @@ sudo apt-get update
 sudo apt-get install -y docker.io 
 sudo systemctl start docker
 sudo systemctl enable docker
-sudo docker run --name=lr_6 -dp 80:80 darynaspyskan/repo1:frontend_lr4_5 > file.txt
+sudo docker run --name=lr_6 -dp 80:80 darynaspyskan/repo1:frontend_lr4_5
+sudo docker start lr_6
+sudo docker run -d --name watchtower --restart=always -v/var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --interval 30
 EOT
   vpc_security_group_ids = [aws_security_group.my_security_group.id]
   depends_on             = [aws_security_group.my_security_group]
