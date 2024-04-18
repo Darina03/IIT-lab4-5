@@ -65,5 +65,5 @@ resource "aws_security_group" "my_security_group" {
     protocol    = "-1" # Allow all outbound traffic
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
 }
