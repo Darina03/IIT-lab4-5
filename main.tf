@@ -41,7 +41,7 @@ EOT
 resource "aws_security_group" "my_security_group" {
   name        = "my-security-group"
   description = "Security group for my application"
-  vpc_id = "vpc-06f549387bfec460a"
+  vpc_id      = "vpc-06f549387bfec460a"
 
   # Define ingress (inbound) rules
   ingress {
